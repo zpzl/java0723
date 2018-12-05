@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ujiuye.mapper.MobileMapper">
+	<insert id="saveMobile" parameterType="java.util.List">
+		insert into mobile
+		(mobileNumber,mobileArea,mobileType,areaCode,postCode) values
+		<foreach collection="list" item="mobile" separator=",">
+			(#{mobile.mobileNumber},#{mobile.mobileArea},#{mobile.mobileType},#{mobile.areaCode},#{mobile.postCode})
+		</foreach>
+	</insert>
+	
+	<select id="search" resultType="com.ujiuye.bean.Mobile">
+		select * from mobile where mobileNumber=#{mobileNumber}
+	</select>
+</mapper>
