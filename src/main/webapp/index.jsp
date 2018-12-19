@@ -7,7 +7,7 @@
 <title> 手机号码归属地查询</title>
 </head>
 <body>
-<form action="search" method="post">
+<form action="search.do" method="post">
 	请输入查询的手机号码：<input type="text" name="mobileNumber"><br>
 	<input type="submit" value="查询">
 </form>
